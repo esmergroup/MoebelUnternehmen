@@ -1,0 +1,215 @@
+package java2enterprise;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class FilialeC {
+	
+	//-----------Kauf eines Schlafzimmers...
+	public static void kaufenSchlafZimmer(){
+
+		MoebelLager sollen = new MoebelLager();
+		sollen.verkaufsanzahl=0;
+		
+		Scanner scannerVariable = new Scanner(System.in);
+		System.out.println("GEBEN SIE DIE ANZAHL DER KÄUFE [MAX 3]:");
+		int anzahlMoebeln = scannerVariable.nextInt();
+		
+		for (int i = 0 ; i < anzahlMoebeln; i++) {
+			if(i == 0) {
+				sollen.bezeichnung = "SCHLAFZIMMER SET COCO";
+				sollen.nummer = 643157;
+				sollen.preis = 1799;
+				sollen.verkaufsanzahl++;
+				ausgabeBestellungenSCHLAFZIMMER(sollen.bezeichnung, sollen.nummer, sollen.preis, sollen.verkaufsanzahl);
+			}
+			else if(i == 1) {
+				sollen.bezeichnung = "SCHLAFZIMMER SET ORIENT";
+				sollen.nummer = 842475;
+				sollen.preis = 2999;
+				sollen.verkaufsanzahl++;
+				ausgabeBestellungenSCHLAFZIMMER(sollen.bezeichnung, sollen.nummer, sollen.preis, sollen.verkaufsanzahl);
+			}
+			else if(i == 2) {
+				sollen.bezeichnung = "SCHLAFZIMMER SET MILANO";
+				sollen.nummer = 4987654;
+				sollen.preis = 1199;
+				sollen.verkaufsanzahl++;
+				ausgabeBestellungenSCHLAFZIMMER(sollen.bezeichnung, sollen.nummer, sollen.preis, sollen.verkaufsanzahl);
+			}
+			else{
+				System.out.println("FEHLER [MAXIMAL 3 BESTELLUNGEN]");
+			}
+		}
+	}
+	
+	public static void ausgabeBestellungenSCHLAFZIMMER(String bezeichnung, int nummer, double preis, long verkaufszahl) {
+		System.out.println("");
+		System.out.println("---------BESTELLUNG SCHLAFZIMMER"+verkaufszahl+"---------");
+		System.out.println("BEZEICHNUNG:\t"+bezeichnung);
+		System.out.println("NUMMER:\t "+nummer);
+		System.out.println("PREIS:\t"+preis);
+		System.out.println("VERKAUFSZAHL:\t"+verkaufszahl);
+	}
+	
+	//-----------Kauf eines Wohnzimmers...
+	
+	public static void kaufenWohnZimmer() {
+		
+		MoebelLager mussen = new MoebelLager();
+		mussen.verkaufsanzahl = 0;
+		
+		Scanner scannerVariable = new Scanner(System.in);
+		System.out.println("GEBEN SIE DIE ANZAHL DER KÄUFE [MAX 3]:");
+		int anzahlMoebeln1 = scannerVariable.nextInt();
+		
+		for (int i = 0 ; i < anzahlMoebeln1; i++) {
+			if(i == 0) {
+				mussen.bezeichnung = "WOHNZIMMER SET DIVAN";
+				mussen.nummer = 85547894;
+				mussen.preis = 1799;
+				mussen.verkaufsanzahl++;
+				ausgabeBestellungenWOHNZIMMER(mussen.bezeichnung, mussen.nummer, mussen.preis, mussen.verkaufsanzahl);
+			}
+			else if(i == 1) {
+				mussen.bezeichnung = "WOHNZIMMER SET ANATOLIA";
+				mussen.nummer = 115456451;
+				mussen.preis = 2999;
+				mussen.verkaufsanzahl++;
+				ausgabeBestellungenWOHNZIMMER(mussen.bezeichnung, mussen.nummer, mussen.preis, mussen.verkaufsanzahl);
+			}
+			else if(i == 2) {
+				mussen.bezeichnung = "WOHNZIMMER SET SIERRA";
+				mussen.nummer = 4563462;
+				mussen.preis = 1199;
+				mussen.verkaufsanzahl++;
+				ausgabeBestellungenWOHNZIMMER(mussen.bezeichnung, mussen.nummer, mussen.preis, mussen.verkaufsanzahl);
+			}
+			else{
+				System.out.println("FEHLER [MAXIMAL 3 BESTELLUNGEN]");
+			}
+		}
+	}
+	
+	public static void ausgabeBestellungenWOHNZIMMER(String bezeichnung, int nummer, double preis, long verkaufszahl) {
+		System.out.println("");
+		System.out.println("---------BESTELLUNG WOHNZIMMER"+verkaufszahl+"---------");
+		System.out.println("BEZEICHNUNG:\t"+bezeichnung);
+		System.out.println("NUMMER:\t "+nummer);
+		System.out.println("PREIS:\t"+preis);
+		System.out.println("VERKAUFSZAHL:\t"+verkaufszahl);
+	}
+	
+	//------Kauf eines Schrankes
+	
+	public static void kaufenSchrank() {
+		
+		MoebelLager konnen = new MoebelLager();
+		konnen.verkaufsanzahl = 0;
+		
+		Scanner scannerVariable = new Scanner(System.in);
+		System.out.println("GEBEN SIE DIE ANZAHL DER KÄUFE [MAX 3]:");
+		int anzahlMoebeln1 = scannerVariable.nextInt();
+		
+		for (int i = 0 ; i < anzahlMoebeln1; i++) {
+			if(i == 0) {
+				konnen.bezeichnung = "SCHRANK PELIKAN";
+				konnen.nummer = 567986;
+				konnen.preis = 1799;
+				konnen.verkaufsanzahl++;
+				konnen.laenge = (4*Math.random());
+				konnen.breite = (3*Math.random());
+				konnen.hoehe = (2*Math.random());
+				ausgabeBestellungenSCHRANK(konnen.bezeichnung, konnen.nummer, konnen.preis, konnen.verkaufsanzahl, konnen.laenge, konnen.breite, konnen.hoehe);
+			}
+			else if(i == 1) {
+				konnen.bezeichnung = "SCHRANK BELINDA";
+				konnen.nummer = 4684833;
+				konnen.preis = 2999;
+				konnen.verkaufsanzahl++;
+				konnen.laenge = (4*Math.random());
+				konnen.breite = (3*Math.random());
+				konnen.hoehe = (2*Math.random());
+				ausgabeBestellungenSCHRANK(konnen.bezeichnung, konnen.nummer, konnen.preis, konnen.verkaufsanzahl, konnen.laenge, konnen.breite, konnen.hoehe);
+			}
+			else if(i == 2) {
+				konnen.bezeichnung = "SCHRANK NIA";
+				konnen.nummer = 3737735;
+				konnen.preis = 1199;
+				konnen.verkaufsanzahl++;
+				konnen.laenge = (4*Math.random());
+				konnen.breite = (3*Math.random());
+				konnen.hoehe = (2*Math.random());
+				ausgabeBestellungenSCHRANK(konnen.bezeichnung, konnen.nummer, konnen.preis, konnen.verkaufsanzahl, konnen.laenge, konnen.breite, konnen.hoehe);
+			}
+			else{
+				System.out.println("FEHLER [MAXIMAL 3 BESTELLUNGEN]");
+			}
+		}
+	}
+	public static void ausgabeBestellungenSCHRANK(String bezeichnung, int nummer, double preis, long verkaufszahl, double laenge, double breite, double hoehe) {
+		DecimalFormat f = new DecimalFormat("#0.00");
+		System.out.println("");
+		System.out.println("---------BESTELLUNG SCHRANK"+verkaufszahl+"---------");
+		System.out.println("BEZEICHNUNG:\t"+bezeichnung);
+		System.out.println("NUMMER:\t "+nummer);
+		System.out.println("PREIS:\t"+preis);
+		System.out.println("VERKAUFSZAHL:\t"+verkaufszahl);
+		System.out.println("LAENGE:\t"+f.format(laenge));
+		System.out.println("BREITE:\t"+f.format(breite));
+		System.out.println("HOEHE:\t"+f.format(hoehe));
+	}
+	
+	
+	//------- Kauf eines regals
+	
+public static void kaufenRegal() {
+		
+		MoebelLager aja = new MoebelLager();
+		aja.verkaufsanzahl = 0;
+		
+		Scanner scannerVariable = new Scanner(System.in);
+		System.out.println("GEBEN SIE DIE ANZAHL DER KÄUFE [MAX 3]:");
+		int anzahlMoebeln1 = scannerVariable.nextInt();
+		
+		for (int i = 0 ; i < anzahlMoebeln1; i++) {
+			if(i == 0) {
+				aja.bezeichnung = "SCHRANK JULIA";
+				aja.nummer = 56746733;
+				aja.preis = 1799;
+				aja.verkaufsanzahl++;
+				aja.traglast = (4*Math.random());
+				ausgabeBestellungenRegal(aja.bezeichnung, aja.nummer, aja.preis, aja.verkaufsanzahl, aja.traglast);
+			}
+			else if(i == 1) {
+				aja.bezeichnung = "SCHRANK MELINDA";
+				aja.nummer = 36736733;
+				aja.preis = 1799;
+				aja.verkaufsanzahl++;
+				aja.traglast = (4*Math.random());
+				ausgabeBestellungenRegal(aja.bezeichnung, aja.nummer, aja.preis, aja.verkaufsanzahl, aja.traglast);
+			}
+			else if(i == 2) {
+				aja.bezeichnung = "SCHRANK MYRIA";
+				aja.nummer = 56747822;
+				aja.preis = 1799;
+				aja.verkaufsanzahl++;
+				aja.traglast = (4*Math.random());
+				ausgabeBestellungenRegal(aja.bezeichnung, aja.nummer, aja.preis, aja.verkaufsanzahl, aja.traglast);
+			}
+			else{
+				System.out.println("FEHLER [MAXIMAL 3 BESTELLUNGEN]");
+			}
+		}
+	}
+	public static void ausgabeBestellungenRegal(String bezeichnung, int nummer, double preis, long verkaufszahl, double traglast) {
+		DecimalFormat f = new DecimalFormat("#0.00");
+		System.out.println("");
+		System.out.println("---------BESTELLUNG SCHRANK"+verkaufszahl+"---------");
+		System.out.println("BEZEICHNUNG:\t"+bezeichnung);
+		System.out.println("NUMMER:\t "+nummer);
+		System.out.println("PREIS:\t"+preis);
+		System.out.println("VERKAUFSZAHL:\t"+verkaufszahl);
+		System.out.println("TRAGLAST:\t"+f.format(traglast));
+	}
+}
