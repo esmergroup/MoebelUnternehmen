@@ -1,0 +1,149 @@
+package java2enterprise;
+
+import java.util.Scanner;
+
+public class MainKlasse {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("--------------");
+		System.out.println("PROGRAMM START");
+		System.out.println("--------------");
+		menue();
+	}
+	
+	public static void ende() {
+		System.out.println("-------------");
+		System.out.println("PROGRAMM ENDE");
+		System.out.println("-------------");
+		System.exit(0);
+	}
+	
+	public static void menue() {
+		while(true){
+			Scanner Wegweiser = new Scanner(System.in);
+			System.out.println("0 = FILIALE A");
+			System.out.println("1 = FILIALE B");
+			System.out.println("2 = FILIALE C");
+			System.out.println("3 = ENDE");
+			byte gehen = Wegweiser.nextByte();
+			if(gehen == 0) {
+				bestellungFilialeA();
+			}
+			else if(gehen == 1) {
+				bestellungFilialeB();
+			}
+			else if(gehen == 2) {
+				bestellungFilialeC();
+			}
+			else if(gehen == 3) {
+				ende();
+			}
+			else{
+				System.out.println("FALSCHE EINGABE");
+			}
+		}
+	}
+	
+	public static void bestellungFilialeA() {
+		while(true){
+			Scanner Auftrag = new Scanner(System.in);
+			System.out.println("");
+			System.out.println("0 = SCHLAFZIMMER");
+			System.out.println("1 = WOHNZIMMER");
+			System.out.println("2 = SCHRANK");
+			System.out.println("3 = REGAL");
+			System.out.println("4 = MENUE");
+			System.out.println("");
+			byte input = Auftrag.nextByte();
+			
+			FilialeA bestellen = new FilialeA();
+			
+			switch(input) {
+			case 0:
+				bestellen.kaufenSchlafZimmer();
+				break;
+			case 1:
+				bestellen.kaufenWohnZimmer();
+				break;
+			case 2:
+				bestellen.kaufenSchrank();
+				break;
+			case 3:
+				bestellen.kaufenRegal();
+				break;
+			case 4:
+				menue();
+				break;
+			}
+		}
+	}
+	
+	public static void bestellungFilialeB() {
+		while(true){
+			Scanner Auftrag = new Scanner(System.in);
+			System.out.println("");
+			System.out.println("0 = SCHLAFZIMMER");
+			System.out.println("1 = WOHNZIMMER");
+			System.out.println("2 = SCHRANK");
+			System.out.println("3 = REGAL");
+			System.out.println("4 = MENUE");
+			System.out.println("");
+			byte input = Auftrag.nextByte();
+			
+			FilialeB bestellenB = new FilialeB();
+			
+			switch(input) {
+			case 0:
+				bestellenB.kaufenSchlafZimmer();
+				break;
+			case 1:
+				bestellenB.kaufenWohnZimmer();
+				break;
+			case 2:
+				bestellenB.kaufenSchrank();
+				break;
+			case 3:
+				bestellenB.kaufenRegal();
+				break;
+			case 4:
+				menue();
+				break;
+			}
+		}
+	}
+	
+	public static void bestellungFilialeC() {
+		while(true){
+			Scanner Auftrag = new Scanner(System.in);
+			System.out.println("");
+			System.out.println("0 = SCHLAFZIMMER");
+			System.out.println("1 = WOHNZIMMER");
+			System.out.println("2 = SCHRANK");
+			System.out.println("3 = REGAL");
+			System.out.println("4 = MENUE");
+			System.out.println("");
+			byte input = Auftrag.nextByte();
+			
+			FilialeC bestellenC = new FilialeC();
+			
+			switch(input) {
+			case 0:
+				bestellenC.kaufenSchlafZimmer();
+				break;
+			case 1:
+				bestellenC.kaufenWohnZimmer();
+				break;
+			case 2:
+				bestellenC.kaufenSchrank();
+				break;
+			case 3:
+				bestellenC.kaufenRegal();
+				break;
+			case 4:
+				menue();
+				break;
+			}
+		}
+	}
+}
