@@ -1,0 +1,12 @@
+package java2enterprise;
+
+public class MoebelLager {
+	double preis;
+	int nummer;
+	String bezeichnung;
+	long verkaufsanzahl;
+	double laenge;
+	double breite;
+	double hoehe;
+	double traglast;
+}
